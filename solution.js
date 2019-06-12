@@ -172,3 +172,10 @@ table.putQueen(5, 4);
 table.putQueen(6, 6);
 // table.putQueen(7, 1);
 console.log(table.verify());
+for (let i = 1; i <= table.queens.length; i++) {
+  let x = table.queens[i - 1][0] + 1;
+  abc = "ABCDEFGH";
+  let y = table.queens[i - 1][1];
+
+  document.querySelector("#queen" + i).value = x + abc[y];
+}
