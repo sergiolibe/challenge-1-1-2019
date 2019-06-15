@@ -158,8 +158,10 @@ function ubicaReinaCalcula() {
 
   queen = document.querySelector("#queenInitial").value;
   if (queen) {
-    x = parseInt(queen[0]) - 1;
+    // x = parseInt(queen[0]) - 1;
+    x = 0;
     y = abc.indexOf(queen[1].toUpperCase());
+    document.querySelector("#queenInitial").value = "1" + queen[1];
     // console.log(y);
     table.putQueen(x, y);
     let init = 0;
