@@ -192,6 +192,15 @@ function ubicaReinaCalcula() {
             for (let i6 = 0; (i6 < 8) & flag; i6++) {
               table.changeColOfQueen(6, i6);
               flag = !table.verify();
+              if (!flag) {
+                let flag2 = false;
+                for (let j = 0; j < 8; j++) {
+                  if (table.tableOcuped[7][j] == 0) {
+                    flag2 = true;
+                  }
+                }
+                flag = !flag2;
+              }
               //       for (let i7 = 0; (i7 < 8) & flag; i7++) {
               //         table.changeColOfQueen(7, i7);
               //         flag = !table.verify();
@@ -202,6 +211,7 @@ function ubicaReinaCalcula() {
       }
     }
   }
+  console.log(table.tableOcuped);
   for (let i = 1; i <= table.queens.length; i++) {
     let x = table.queens[i - 1][0] + 1;
     abc = "ABCDEFGH";
